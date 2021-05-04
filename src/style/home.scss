@@ -1,0 +1,28 @@
+@import './variables';
+@import './mixins';
+
+
+.home {
+	
+	&__hero-block{
+		@include hero-block;
+		background-color: $color-darkgrey;
+	}
+
+	&__hero-block-image{
+		@include hero-block-image;
+		background-image: url("../assets/hero-start.svg");
+
+		@include mobile {
+			background-image: url("../assets/hero-start-mobile.png");
+		}
+	}
+
+	&__shopNow-button{
+		@include button-primary;
+		background-color: $color-pink;
+		margin-top: 20px;
+		color: $color-red;
+		margin-bottom: rem(32px);
+	}
+}

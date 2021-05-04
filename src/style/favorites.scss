@@ -1,0 +1,41 @@
+@import './variables';
+@import './mixins';
+
+.favorites {
+
+	&__container {
+		padding-right: 0; 
+		padding-left: 0;
+	}
+
+	&__hero-block{
+		@include hero-block;
+		background-color: $color-pink;
+	}
+
+	&__hero-block-image{
+		@include hero-block-image;
+		background-image: url("../assets/favorites-image.png");
+		background-position: center;
+	}
+
+	&__page-title {
+		display: block;
+	}
+
+	&__remove-btn {
+		background-image: url("../assets/delete.svg");
+		background-repeat: no-repeat;
+		display: flex;
+		justify-content: flex-end;
+		background-color: $color-grey;
+		color: $color-black;
+		padding: rem(20px);
+		width: rem(8px);
+		background-position: rem(8px);
+		margin-top: rem(24px);
+		cursor: pointer;
+		border: none;
+		position: absolute;
+	}
+}

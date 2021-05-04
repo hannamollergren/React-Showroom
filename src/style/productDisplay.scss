@@ -1,0 +1,214 @@
+@import './variables';
+@import './mixins';
+
+.product-display {
+
+	&__content-container {
+		min-height: 85vh;
+		padding-top: rem(54px);
+		padding-bottom: rem(32px);
+		background-color: $color-grey;
+	}
+
+	&__left-column {
+		padding-left: 0;
+		padding-right: rem(16px);
+
+		@include mobile {
+			padding-right: 0;
+			padding-left: 0;
+		}
+	}
+
+	&__left-column, &__right-column {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	&__right-column {
+		padding-right: 0;
+		@include mobile {
+			display: none;
+		}
+	}
+
+	&__image:first-child {
+		margin-right: rem(16px);
+	}
+
+	&__image {
+		display: inline-block;
+		width: 48%;
+		height: 62vh;
+		margin-bottom: rem(16px);
+		background-color: $color-darkgrey;
+
+		@include mobile {
+			height: 55vh;
+			width: 100%;
+		}
+	}
+
+	&__accordion {
+		margin-right: rem(16px);
+
+		@include tablet {
+			margin-right: 0;
+		}
+
+		@include mobile {
+			display: none;
+			margin-right: 0;
+		}
+
+		&--mobile {
+			display: none;
+
+			@include mobile {
+				display: block;
+			}
+		}
+	}
+
+	
+	&__color-container {
+		margin: rem(64px 0 32px 0);
+
+		@include mobile {
+			margin: rem(16px 0 32px 0);
+		}
+		
+		&--title {
+			font-size: rem(15px)
+		}
+
+		&--elements {
+			display: inline-block;
+			margin-right: rem(16px);
+		}
+
+		input[type="radio"] {
+			position: absolute;
+			  opacity: 0;
+			  cursor: pointer;
+		}
+
+		// &--checkmark --> styling inline style i component
+		
+		&--checkmark:hover {
+			border: 2px solid black;
+		}
+
+		input:checked ~ &--checkmark {
+			border: 2px solid black;
+		  }
+
+		&--label {
+			margin-top: rem(36px);
+		}
+	}
+	
+	&__product {
+		
+		&--brand {
+			font-family: $font-family-secondary;
+		}
+
+		&--name {
+			padding-top: rem(2px);
+/* 			font-weight: bold; */
+
+			@include mobile {
+				margin-left: rem(6px);
+			}
+		}
+		
+		&--price {
+			padding-top: rem(16px);
+			/* font-weight: bold; */
+
+			@include mobile {
+				padding-top: 0;
+			}
+		}
+
+		&--brand, &--name, &--price {
+			font-size: rem(16px);
+		}
+
+		&--container {
+			margin-bottom: rem(16px);
+
+			@include mobile {
+				display: flex;
+    			justify-content: space-between;
+			}
+		}
+	}
+	
+	&__add-btn {
+		margin: rem(22px 0 0 0);
+		@include button-primary;
+		@include button-expand;
+		height: 3.1rem;
+		
+		@include mobile {
+			margin: 0;
+			height: 3.5rem;
+		}
+	}
+	
+	&__top-column--mobile {
+		display: none;
+		
+		@include mobile {
+			display: block;
+		}
+	}
+
+	&__bottom-column--mobile {
+		display: none;
+
+		p {
+			display: inline;
+		}
+		
+		@include mobile {
+			display: block;
+			bottom: 0;
+			background-color: $color-white;
+			padding: rem(30px 30px 89px 30px);
+			position: sticky;
+    		width: 100%;
+		}
+	}
+
+	&__size-container {
+		padding-left: 0;
+		padding-right: rem(0);
+	}
+
+	&__back-btn {
+		color: $color-black;
+		position: absolute;
+		background-image: url('../assets/back-icon.svg');
+		background-repeat: no-repeat;
+		background-position: rem(0px 0px); 
+		background-color: $color-grey;
+		background-repeat: no-repeat;
+		color: $color-black;
+		margin-top: rem(-22px);
+		margin-bottom: rem(8px);
+		border: none;
+		cursor: pointer;
+		transition: border-bottom 200ms;
+		width: rem(70px);
+		height: rem(19px);
+		font-weight: bold;
+		padding: 0rem 0 1.4rem 1.875rem;
+		text-align: start;
+	}
+}
+
+

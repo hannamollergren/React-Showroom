@@ -1,0 +1,16 @@
+@import './variables';
+@import './mixins';
+
+.welcome {
+	height: 100vh;
+	display: flex;
+    justify-content: center;
+	align-items: center;
+	
+	&__image {
+		background-image: url('../assets/welcome.svg');
+		background-repeat: no-repeat;
+		width: rem(620px);
+		height: rem(110px);
+	}
+}

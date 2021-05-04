@@ -1,0 +1,16 @@
+@import './variables';
+@import './mixins';
+
+.news {
+
+	&__hero-block{
+		@include hero-block;
+		background-color: $color-orange;
+	}
+
+	&__hero-block-image{
+		@include hero-block-image;
+		background-image: url("../assets/news-image.svg");
+		background-size: cover;
+	}
+}

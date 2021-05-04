@@ -1,0 +1,59 @@
+@import './variables';
+@import './mixins';
+
+.login {
+	background-image: url('../assets/login-image.png');
+	background-color: #cccccc;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	display: flex;
+    justify-content: center;
+	align-items: center;
+
+	&__container {
+		background-color: $color-white;
+		width: 50%;
+		padding: rem(48px);
+		border-radius: rem(2px);
+
+		@include mobile {
+			width: 80%;	
+			padding: rem(32px);
+		}
+	}
+
+	&__logo {
+		background-image: url('../assets/testlogo.png');
+		background-repeat: no-repeat;
+		width: rem(30px);
+		height: rem(30px);
+	}
+
+	&__input {
+		margin-bottom: rem(8px);
+	}
+
+	&__login-button {
+		@include button-primary;
+		margin: rem(24px 0 8px 0);
+		color: $color-white;
+
+		@include mobile {
+			@include button-expand;
+		}
+	}
+
+	&__login-button a{
+		color: $color-white;
+	}
+
+	&__createAccount-button {
+		@include button-secondary;
+
+		@include mobile {
+			@include button-expand;
+		}
+	}
+}

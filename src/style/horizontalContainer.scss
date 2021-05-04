@@ -1,0 +1,42 @@
+@import './variables';
+@import './mixins';
+
+.horizontal-container{
+	white-space: nowrap;
+	
+	&__product-list{
+		overflow: scroll;
+		overflow-y: hidden;
+		scroll-snap-type: x mandatory;
+		scroll-behavior: smooth;
+		margin-top: rem(16px);
+	}
+
+	&__product-item-container{
+		scroll-snap-align: start;
+		margin: rem(0 10px 20px 10px);
+		text-decoration: none;
+		list-style: none;
+		display: inline-block;
+		cursor: pointer;
+	}
+
+	&__product-item-container:first-child{
+		margin-left: 0;
+	}
+	
+	&__product-item{
+		display: inline-block;
+		@include product-container-home;
+	}
+
+	&__product-item span{
+		font-family: $font-family-secondary;
+	}
+
+	&__arrow-container{
+		background-color: $color-grey;
+		width: rem(27px);
+		height: rem(43px);
+	}
+}

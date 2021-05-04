@@ -1,0 +1,205 @@
+@import '_variables.scss';
+$rem-fallback: true; // used in sass-rem
+@import '~sass-rem';
+
+
+/* Breakpoints */
+@mixin mobile {
+    @media (max-width: #{$mobile-width}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: #{$tablet-width}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop-width}) {
+        @content;
+    }
+}
+
+/* Blocks */
+@mixin hero-block {
+	width: 100%;
+	height: 45vh;
+	padding: rem(32px) !important;;
+
+	@include mobile {
+		position: relative;
+		height: 85vh;
+		padding: rem(30px);
+	}
+}
+
+
+@mixin hero-block-image {
+	width: 100%;
+	height: 45vh;
+	background-size: cover;
+    background-repeat: no-repeat;
+
+	@include mobile {
+		position: absolute;
+		z-index: 1000;
+		width: 70%;
+		height: 40%;
+		bottom: 0;
+		margin: rem(0 30px 100px 30px);
+	}
+}
+
+/* Product container */
+@mixin product-container-home {
+	width: rem(245px);
+	height: rem(287px);
+	background-color: $color-darkgrey;
+}
+
+@mixin product-container {
+	width: 93%;
+	height: rem(287px);
+	background-color: $color-darkgrey;
+
+	@include mobile {
+		width: 100%;
+	}
+}
+
+/* Text */
+@mixin page-title {
+	font-size: rem($fontsize-h1-roboto);
+	font-weight: bold;
+	margin-top: 1em;
+	@include mobile {
+		font-size: $fontsize-h1-mobile;
+	}
+}
+
+@mixin page-undertitle {
+	font-family: $font-family-secondary;
+	font-size: rem($fontsize-h2-rosarivo);
+	@include mobile {
+		font-size: $fontsize-h1-mobile;
+	}
+}
+
+/* Buttons */
+@mixin button {
+	display: block;
+	width: rem(184px);
+	height: rem(43px);
+	font-family: $font-family-primary;
+	font-size: rem($fontsize-normal);
+	cursor: pointer;
+	border-radius: rem(2px);
+}
+
+@mixin button-primary {
+	@include button;
+	background: #333333;
+	color: $color-white;
+	border: none;
+	font-weight: bold;
+}
+
+@mixin button-secondary {
+	@include button;
+	background: $color-white;
+	color: $color-black;
+	border: 1px solid $color-black;
+	font-weight: normal;
+}
+
+@mixin button-expand {
+	width: 100%;
+}
+
+/* Input */
+@mixin input-expand {
+	width: 100%;
+}
+
+/* Icons */
+@mixin icons {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+}
+
+@mixin icon-favorites {
+	background-image: url("../assets/favorite.svg");
+	@include icons;
+	width: rem(34.29px);
+	height: rem(28px);
+}
+
+@mixin icon-cart {
+	background-image: url("../assets/cart.svg");
+	@include icons;
+	width: rem(26px);
+	height: rem(28px);
+}
+
+@mixin icon-login {
+	background-image: url("../assets/avatar.svg");
+	@include icons;
+	width: rem(23.61px);
+	height: rem(28px);
+}
+
+@mixin icon-search {
+	background-image: url("../assets/search.svg");
+	@include icons;
+	width: rem(28px);
+	height: rem(28px);
+}
+
+@mixin icon-down {
+	background-image: url("../assets/down.svg");
+	@include icons;
+	width: rem(14px);
+	height: rem(23px);
+}
+
+@mixin icon-up {
+	background-image: url("../assets/up.svg");
+	@include icons;
+	width: rem(14px);
+	height: rem(23px);
+}
+
+@mixin icon-next-left {
+	/* background: $color-grey;
+	width: 27px;
+	height: 43px; -> container */
+	background-image: url("../assets/left.svg");
+	@include icons;
+	width: 24.5px;
+	height: 41px;
+}
+
+@mixin icon-next-right {
+	/* background: $color-grey;
+	width: 27px;
+	height: 43px; -> container */
+	background-image: url("../assets/right.svg");
+	@include icons;
+	width: rem(24.5px);
+	height: rem(41px);
+}
+
+@mixin logo {
+	background-image: url("../assets/logo.svg");
+	@include icons;
+	width: 37px;
+	height: 44px;
+}
+
+

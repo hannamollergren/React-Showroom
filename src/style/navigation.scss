@@ -1,0 +1,106 @@
+@import './variables';
+@import './mixins';
+
+.navigation {
+	z-index: 5000;
+
+	&__drawer {
+		padding-left: 0;
+
+		@include mobile {
+			padding-left: rem(10px);
+		}
+	}
+
+	&__links {
+		&--right { 
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding-right: rem(32px) !important;
+	
+			@include mobile {
+				display: none;
+			}
+		}
+		&--mobile {
+			display: none;
+
+			@include mobile {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: rem(10px 30px);
+				border-top: 1px solid $color-darkgrey;
+				background-color: $color-grey;
+			}
+		}
+
+	}	
+
+	&__item {
+		padding: rem(12px 0 12px 30px);
+		font-size: rem(16px);
+
+		@include mobile {
+			padding: rem(20px 0 22px 30px);
+		}
+		
+		&--icon-search {
+			color: $color-black;
+			background-image: url('../assets/search-mobile.svg');
+			background-repeat: no-repeat;
+			background-position: rem(0px 10px); 
+		}
+
+		&--icon-favorites {
+			color: $color-black;
+			background-image: url('../assets/favorite.svg');
+			background-repeat: no-repeat;
+			background-position: rem(0px 10px); 
+		}
+
+		&--icon-cart {
+			color: $color-black;
+			background-image: url('../assets/cart.svg');
+			background-repeat: no-repeat;
+			background-position: rem(0px 10px); 
+			cursor: pointer;
+		}
+
+		&--icon-mypages {
+			color: $color-black;
+			background-image: url('../assets/avatar.svg');
+			background-repeat: no-repeat;
+			background-position: rem(0px 10px); 
+		}
+
+		span {
+			font-weight: bold;
+			font-family: $font-family-primary;
+		}
+	}
+
+	&__item {
+		transition: font-weight 200ms;
+	}
+	
+	&__item:hover {
+		font-weight: bold;
+	}
+
+	&__logo {
+		background-image: url('../assets/logo-small.svg');
+		background-repeat: no-repeat;
+		width: rem(30px);
+		height: rem(30px);
+		cursor: pointer;
+	}
+}
+
+.navigation__mobile {
+	width: 100%;
+	position: sticky;
+	bottom: 0;
+	z-index: 2000;
+}

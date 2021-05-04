@@ -1,0 +1,15 @@
+@import './variables';
+@import './mixins';
+
+.footer{
+	border-top: 1px solid $color-darkgrey;
+
+	&__list-container {
+		margin-bottom: 2rem;
+		@include mobile {
+			cursor: pointer;
+			padding-right: 0;
+			padding-left: 0;
+		}
+	}
+}

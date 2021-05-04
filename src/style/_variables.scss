@@ -1,0 +1,27 @@
+/* Font family */
+$font-family-primary: 'Roboto', sans-serif;
+$font-family-secondary: 'Rosarivo', Times;
+
+/* Colors */
+$color-black						: #333333;
+$color-white						: #FFFFFF;
+$color-grey							: #FAF9F8;
+$color-darkgrey						: #E5E5E5;
+$color-pink							: #FFCCCC;
+$color-lightblue					: #B8E6F0;
+$color-darkpink						: #D05D7F;
+$color-orange						: #FC912E;
+$color-red							: #AD0000;
+
+/* Font sizes */
+$fontsize-normal					: 15px;
+$fontsize-larger					: 16px;
+$fontsize-smaller					: 14px;
+$fontsize-h1-roboto			 		: 36px;
+$fontsize-h2-rosarivo				: 30px; 
+$fontsize-h1-mobile		 			: 22px;
+
+/* Breakpoints */
+$mobile-width						: 640px;
+$tablet-width						: 1024px;
+$desktop-width						: 1440px;

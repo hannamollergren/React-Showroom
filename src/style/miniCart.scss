@@ -1,0 +1,138 @@
+@import './variables';
+@import './mixins';
+
+.mini-cart {
+	position: absolute;
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	top: rem(64px);
+
+	@include mobile {
+		position: sticky;
+	}
+
+	&__list-container {
+		margin: rem(16px 0 4px 0);
+		max-height: 48vh;
+		overflow: scroll;
+		overflow-x: hidden;
+	}
+
+	&__product-info {
+		width: 40%;
+	}
+
+	&__brand, &__name, &__price {
+		font-size: rem(16px);
+	}
+
+	&__price {
+		font-weight: bold;
+	}
+
+	&__brand, &__name {
+		max-width: rem(80px);
+		white-space: nowrap;
+  		overflow: hidden;
+  		text-overflow: ellipsis;
+	}
+
+	&__product-container {
+		height: rem(130px);
+		margin-bottom: rem(16px);
+		display: flex;
+		justify-content: space-between;
+
+		li {
+			margin-top: 0;
+			display: inline-block;
+		}
+	}
+
+	&__image {
+		width: 30%;
+		height: 94%;
+		background-color: $color-darkgrey;
+		display: inline-block;
+	}
+
+	&__delete-btn {
+		width: 20px;
+		height: 20px;
+		background-color: $color-white;
+		background-image: url("../assets/trash-can.svg");
+		background-repeat: no-repeat;
+		color: $color-black;
+		cursor: pointer;
+		border: none;
+	}
+
+	
+
+	&__total-price {
+		display: flex;
+		justify-content: space-between;
+		padding: rem(16px 0);
+		border-top: 1px solid $color-darkgrey;
+
+		p {
+			font-size: rem(16px);
+			font-weight: bold;
+			display: inline;
+		}
+	}
+
+	&__close-btn {
+		background-image: url("../assets/delete.svg");
+		background-repeat: no-repeat;
+		display: flex;
+		color: $color-black;
+		padding: rem(20px 20px 0 20px);
+		cursor: pointer;
+		border: none;
+		background-color: $color-white;
+	}
+
+	&__checkout-btn {
+		@include button-primary;
+		@include button-expand;
+	}
+}
+
+.container {
+	padding: rem(16px);
+	position: relative;
+	width: 30%;
+	background-color: $color-white;
+	z-index: 3000;
+	margin-right: rem(39px);
+
+	@include tablet {
+		width: 50%;
+	}
+
+	@include mobile {
+		width: 100%;
+		margin-right: 0;
+	}
+}
+
+.container.arrow-top {
+  /* margin-top: 40px; */
+}
+
+.container.arrow-top:after {
+	content: " ";
+	position: absolute;
+	right: rem(24px);
+	top: rem(-15px);
+	border-top: none;
+	border-right: 15px solid transparent;
+	border-left: 15px solid transparent;
+	border-bottom: 15px solid $color-white;
+
+	@include mobile {
+		display: none
+	}
+}

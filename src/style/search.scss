@@ -1,0 +1,91 @@
+@import './variables';
+@import './mixins';
+
+.search {
+
+	&__input-container {
+		border: 1px solid $color-darkgrey;
+		background-color: $color-grey;
+	}
+	
+	&__input{
+		padding: rem(16px 20px 16px 76px);
+		@include input-expand;
+		border: none;
+		background-color: #FAF9F8;
+		color: $color-black;
+		background-image: url('../assets/search.svg');
+		background-repeat: no-repeat;
+		background-position: rem(28px 13px); 
+
+		@include mobile {
+			display: none;
+		}
+
+		&--mobile {
+			display: none;
+
+			@include mobile {
+				display: block;
+				padding: rem(16px 24px);
+				@include input-expand;
+				border: none;
+				background-color: #FAF9F8;
+				color: $color-black;
+			}
+			
+		}
+	}
+
+	&__container {
+		position: absolute;
+    	background-color: $color-white;
+		width: 100%;
+		z-index: 4000;
+		max-height: 50vh;
+		overflow: scroll;
+
+		&--mobile {
+			@include mobile {
+			position: absolute;
+			background-color: $color-white;
+			width: 100%;
+			z-index: 4000;
+			max-height: 30vh;
+			overflow: scroll;
+			}
+		}
+	}
+
+	&__result {
+		padding: rem(8px 32px);
+		transition: background-color 400ms;
+		width: 100%;
+
+		@include mobile {
+			display: none;
+		}
+
+		&--mobile {
+			display: none;
+
+			@include mobile {
+				display: block;
+				padding: rem(8px 32px);
+				transition: background-color 400ms;
+				width: 100%;
+			}
+		}
+	}
+
+	&__result:hover {
+		background-color: $color-darkgrey; 
+		cursor: pointer;
+	}
+
+	&__result--mobile:hover {
+		background-color: $color-darkgrey;
+		cursor: pointer;
+	}
+}
+	

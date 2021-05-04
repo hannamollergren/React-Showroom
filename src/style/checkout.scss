@@ -1,0 +1,145 @@
+@import './variables';
+@import './mixins';
+
+.checkout {
+
+	&__hero-block{
+		@include hero-block;
+		background-color: $color-lightblue;
+	}
+	
+	&__hero-block-image{
+		@include hero-block-image;
+		background-image: url("../assets/checkout-image.png"); // BYT BILD TILL SÄMRE UPPLÖSNING 
+	}
+
+	&__cart-items {
+		padding-right: 0; 
+		padding-left: 0;
+	}
+
+	&__customer-info {
+		padding-right: 0; 
+		padding-left: 0;
+	}
+
+	&__total-price {
+		display: flex;
+		justify-content: space-between;
+		padding: rem(16px 0 0 0);
+		border-top: 1px solid $color-darkgrey;
+		margin-top: rem(24px);
+	}
+
+	&__step {
+		margin: rem(24px 0 16px 0);
+
+		span {
+			font-family: $font-family-primary;
+		}
+	}
+	&__step:first-child {
+		margin: rem(0 0 16px 0);
+	}
+
+	&__input-options {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: rem(4px);
+
+		label {
+			font-size: rem(15px);
+		}
+
+		input {
+			width: rem(15px);
+			height: rem(15px);
+			margin-right: rem(16px);
+		}
+	}
+
+	&__list-container {
+		margin: rem(16px 0 4px 0);
+		max-height: 48vh;
+		overflow: scroll;
+	}
+
+	&__product-info {
+		width: 60%;
+	}
+
+	&__brand, &__name, &__price {
+		font-size: rem(16px);
+	}
+
+	&__price {
+		font-weight: bold;
+	}
+
+	&__product-container {
+		height: rem(130px);
+		margin-bottom: rem(16px);
+		margin-right: rem(32px);
+		display: flex;
+		justify-content: space-between;
+
+		@include mobile {
+			margin-right: rem(0);
+		}
+
+		li {
+			margin-top: 0;
+			display: inline-block;
+		}
+	}
+
+	&__image {
+		width: 30%;
+		height: 94%;
+		background-color: $color-darkgrey;
+		display: inline-block;
+	}
+
+	&__delete-btn {
+		width: 20px;
+		height: 20px;
+		background-color: $color-white;
+		background-image: url("../assets/trash-can.svg");
+		background-repeat: no-repeat;
+		color: $color-black;
+		cursor: pointer;
+		border: none;
+	}
+
+	&__confirm-btn {
+		@include button-primary;
+		margin-top: rem(16px);
+
+		@include mobile {
+			@include button-expand;
+		}
+	}
+
+	&__shopMore-btn {
+		@include button-secondary;
+		margin-top: rem(16px);
+
+		@include mobile {
+			@include button-expand;
+		}
+	}
+
+	&__message {
+		margin-bottom: rem(48px);
+
+		h1 {
+			margin-top: 0;
+			margin-bottom: rem(16px);
+		}
+	}
+
+	&__phone {
+		margin-top: 19px;
+	}
+}
